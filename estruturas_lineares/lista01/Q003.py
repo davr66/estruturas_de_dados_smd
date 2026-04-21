@@ -1,6 +1,6 @@
 from collections import deque
 
-def brackets_verifier(expression):
+def brackets_verifier(expression:str):
     stack = deque()
     opening_brackets = ['{','[','(']
     closing_brackets = ['}',']',')']

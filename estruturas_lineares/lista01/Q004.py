@@ -39,7 +39,7 @@ class Queue:
         customer.pass_num = len(self.__queue) + 1
         self.__queue.append(customer)
 
-    def find_pos_by_name(self, name):
+    def find_pos_by_name(self, name:str):
         for i, c in enumerate(self.__queue):
             if c.name == name:
                 return i

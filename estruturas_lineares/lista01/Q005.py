@@ -4,7 +4,7 @@ from time import sleep
 
 
 class Document:
-    def __init__(self,title, page_num, user_name):
+    def __init__(self,title:str, page_num:int, user_name:str):
         self.__title = title
         self.__page_num = page_num
         self.__user_name = user_name
