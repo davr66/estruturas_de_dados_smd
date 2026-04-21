@@ -28,17 +28,12 @@ class Customer:
     def __repr__(self):
         return self.__str__()
 
-    def set_pass(self, pass_num):
-        self.pass_num = pass_num
-
-
 class Queue:
     def __init__(self):
         self.__queue = deque()
 
-    @property
-    def queue(self):
-        return self.__queue
+    def waiting_number(self):
+        return len(self.__queue)
 
     def add_customer(self, customer: Customer):
         customer.pass_num = len(self.__queue) + 1
@@ -55,7 +50,7 @@ class Queue:
 
     def queue_as_list(self):
         c_list = "------ Fila de Atendimento ------\n\n"
-        for i, c in enumerate(self.queue):
+        for i, c in enumerate(self.__queue):
             c_list += f"[{i}] {c.name} - Senha {str(c.pass_num)}\n"
         c_list += "---------------------------------"
         return c_list
@@ -77,6 +72,7 @@ for c in [c1, c2, c3, c4, c5, c6, c7, c8]:
 print(f1.queue_as_list())
 print(f1.next_customer())
 print(f1.queue_as_list())
+print(f1.find_pos_by_name('Hugo'))
 
 
 
